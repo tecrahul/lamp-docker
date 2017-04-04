@@ -1,8 +1,8 @@
 version: "2.0"
 services:
   web:
-    container_name: magento2-docker
-    image: tecrahul/magento2-docker
+    container_name: tecadmin/lamp-docker
+    image: tecadmin/lamp-docker
     ports:
        - "8085:80"
        - "1443:443"
@@ -12,12 +12,12 @@ services:
     restart: always
   mysql_db:
     image: mysql:5.6
-    container_name: magento2_db
+    container_name: lamp-db
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: magento2_docker
-      MYSQL_USER: magento2_docker
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: pass123
     restart: always
